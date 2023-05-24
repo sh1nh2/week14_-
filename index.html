@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>음식중독</title>
+	<style>
+.opn {max-width: 101%;  
+max-height: 101%;  
+margin-top: -27.5px;
+margin-left: -10px;
+overflow: auto;}
+body{background-color:#FB48C4;}
+section{width: 1000px;margin: auto;}
+h1{font-size: 6rem; text-align: center;}
+h2{text-align: center;}
+	
+	</style>
+}
+</head>
+<body>
+	<img src="opn.gif" class="opn"> 
+<section>
+		<h1 style="margin-top: 150px;">음식중독</h1>
+		<img src="slot.gif" style="width: 1000px; margin: auto; display: block; 
+		margin-bottom: 500px;">
+		<h2 style="margin-bottom: 500px;">장바구니에 마음에 드는 음식을 5개 이상 담아보세요! </h2>
+		<img src="shpbsk2.png" style="width:1000px">
+	<img src="fd01.png" class="drag" style="width: 350px; left: 80px; top: 2650px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd06.png" class="drag" style="width: 290px; left: 450px; top: 2650px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd08.png" class="drag" style="width: 530px; left: 780px; top: 2620px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd04.png" class="drag" style="width: 330px; left: 1350px; top: 2650px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd05.png" class="drag" style="width: 300px; left: 1400px; top: 2920px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd03.png" class="drag" style="width: 230px; left: 1450px; top: 3370px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd02.png" class="drag" style="width: 300px; left: 1400px; top: 3620px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd10.png" class="drag" style="width: 300px; left: 50px; top: 2950px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd09.png" class="drag" style="width: 300px; left: 50px; top: 3220px; display: block; position: absolute; cursor: pointer;">
+	<img src="fd07.png" class="drag" style="width: 280px; left: 50px; top: 3500px; display: block; position: absolute; cursor: pointer;">
+
+
+
+	
+</section>
+
+-----------
+<script type="text/javascript">
+	//아래 코드를 삽입하면 drag 클래스가 적용된 객체들은 드래그가 가능합니다.
+	(function(){
+		var d = false;
+		var target,dx,dy;
+		var t = document.getElementsByClassName("drag");
+		for(var i=0; i<t.length; i++){
+			t[i].style.display = "block";
+			t[i].style.position = "absolute";
+			t[i].style.cursor = "pointer";
+			t[i].ondragstart = function(e){e.preventDefault();};
+			t[i].onmousedown = function(e){ d = true; dx = e.offsetX; dy = e.offsetY; target = e.target;}
+			t[i].onmouseup = function(){ d = false;}
+			window.onmousemove = function(e){ 
+				if(d){ target.style.left = (e.clientX - dx) + "px";
+					target.style.top = (e.clientY - dy) + "px";}
+			}
+		}
+	})();
+</script>
+</body>
+</html>
